@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { Reducer, useMemo, useReducer } from 'react';
 
-import AppContext from './context';
+import { AppContext } from './context';
 import { appReducer, initialAppState } from './reducer';
 
 import HomePage from './container/HomePage';
+import { IState, TAction } from './reducer/interfaces';
 
 function App() {
-  const [state, dispatch] = React.useReducer(appReducer, initialAppState);
-  const contextValue = React.useMemo(() => {
+  const [state, dispatch] = useReducer<Reducer<IState, TAction>>(appReducer, initialAppState);
+  const contextValue = useMemo(() => {
     return { state, dispatch };
   }, [state, dispatch]);
 

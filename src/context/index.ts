@@ -1,7 +1,11 @@
 import React from 'react';
+import { initialAppState } from '../reducer';
 
 import { IAppContext } from './interfaces';
 
-const AppContext = React.createContext<IAppContext | null>(null);
+export const AppContext = React.createContext<IAppContext>({
+  state: initialAppState,
+  dispatch: () => {},
+});
 
-export default AppContext;
+export const useAppContext = () => React.useContext(AppContext);

@@ -9,8 +9,8 @@ const MovieList = () => {
 
   return (
     <MovieListWrapper>
-      {movieList.map(({ title }, idx) => (
-        <div className="movie-box" key={title + idx}>
+      {movieList.map(({ title }) => (
+        <div className="movie-box" key={title}>
           <MovieBox title={title} />
         </div>
       ))}

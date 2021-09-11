@@ -1,9 +1,11 @@
 export interface IState {
-  app: {
-    isLoading: false;
-  };
-  movies: object[];
+  error: string;
+  isLoading: boolean;
   movieFavorites: object[];
+  movies: object[];
+  search: {
+    page: number;
+  };
 }
 
 type ActionGeneratorType<TName extends string, TPayload> = {
@@ -11,8 +13,6 @@ type ActionGeneratorType<TName extends string, TPayload> = {
   payload: TPayload;
 };
 
-type TFetchProductSucces = ActionGeneratorType<'FETCH_PRODUCTS_SUCCESS', { movies: object[] }>;
+type TUpdateState = ActionGeneratorType<'UPDATE_APP_STATE', Partial<IState>>;
 
-type TFetchProductError = ActionGeneratorType<'FETCH_PRODUCTS_ERROR', { error: string }>;
-
-export type TAction = TFetchProductError | TFetchProductSucces;
+export type TAction = TUpdateState;

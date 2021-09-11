@@ -1,27 +1,21 @@
 import { IState, TAction } from './interfaces';
 
 export const initialAppState: IState = {
-  app: {
-    isLoading: false,
-  },
-  movies: [],
+  error: '',
+  isLoading: false,
   movieFavorites: [],
+  movies: [],
+  search: {
+    page: 1,
+  },
 };
 
-export const appReducer = (state: IState, action: TAction) => {
+export const appReducer = (state: IState, action: TAction): IState => {
   switch (action.type) {
-    case 'FETCH_PRODUCTS_SUCCESS': {
+    case 'UPDATE_APP_STATE': {
       return {
         ...state,
-        isLoading: false,
-        products: action.payload.movies,
-      };
-    }
-    case 'FETCH_PRODUCTS_ERROR': {
-      return {
-        ...state,
-        isLoading: false,
-        error: action.payload.error,
+        ...action.payload,
       };
     }
     default:
