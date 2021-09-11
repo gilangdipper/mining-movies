@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 
+import MovieList from '../../components/MovieList';
+
 import { HomePageWrapper } from './style';
 
 const HomePage = () => {
@@ -9,7 +11,9 @@ const HomePage = () => {
 
   return (
     <HomePageWrapper>
-      <div className="content">kocak</div>
+      <div className="content">
+        <MovieList />
+      </div>
     </HomePageWrapper>
   );
 };
