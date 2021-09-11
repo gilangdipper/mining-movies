@@ -28,6 +28,14 @@ module.exports = {
     radix: 'error',
     'space-before-blocks': 'error',
     'import/prefer-default-export': 'off',
+    'max-len': [1, { code: 100 }],
+    'no-await-in-loop': 'off',
+    'no-cond-assign': ['error', 'always'],
+    'no-console': ['warn', { allow: ['error'] }],
+    'no-duplicate-case': 'error',
+    'no-duplicate-imports': ['error', { includeExports: false }],
+    'no-else-return': 'error',
+    'no-nested-ternary': 'error',
   },
   overrides: [
     {
