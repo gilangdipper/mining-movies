@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Star } from '@styled-icons/fa-solid/Star';
+import { Heart } from '@styled-icons/fa-solid/Heart';
 
 export const MovieCardWrapper = styled.div`
   display: flex;
@@ -32,6 +33,10 @@ export const MovieCardWrapper = styled.div`
       transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
       text-align: center;
+      width: 50px;
+      padding: 0;
+      border: 0;
+      background: transparent;
     }
 
     &:hover {
@@ -66,4 +71,8 @@ export const StarIcon = styled(Star)`
   flex: 0 0 10px;
   margin-right: 2px;
   color: yellow;
+`;
+
+export const HeartIcon = styled(Heart)`
+  color: red;
 `;

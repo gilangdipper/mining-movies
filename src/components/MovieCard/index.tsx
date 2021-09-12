@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 
 import { IMAGE_BASE_URL } from '../../constant';
 
-import { MovieCardWrapper, StarIcon } from './style';
+import { HeartIcon, MovieCardWrapper, StarIcon } from './style';
 import { IMovieCard } from './interface';
 
 const MovieCard: FC<IMovieCard> = ({ title, backdropPath, voteAverage }) => {
@@ -12,7 +12,7 @@ const MovieCard: FC<IMovieCard> = ({ title, backdropPath, voteAverage }) => {
       <div className="poster-wrapper">
         <img alt="movie poster" className="poster" src={IMAGE_BASE_URL + backdropPath} />
         <button className="favorite-action" onClick={() => {}}>
-          click me
+          <HeartIcon />
         </button>
       </div>
 
