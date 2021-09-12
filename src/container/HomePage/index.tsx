@@ -9,7 +9,7 @@ import { discoverMovies } from './action';
 
 const HomePage = () => {
   const appContext = useAppContext();
-  const { movies, isLoading } = appContext.state;
+  const { movies, isLoading, genres } = appContext.state;
 
   useEffect(() => {
     discoverMovies(appContext);
@@ -18,7 +18,7 @@ const HomePage = () => {
   return (
     <HomePageWrapper>
       <div className="content">
-        <MovieFilter />
+        <MovieFilter genres={genres} />
         <MovieList movies={movies} isLoading={isLoading} />
       </div>
     </HomePageWrapper>

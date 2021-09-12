@@ -15,6 +15,6 @@ export interface IMovie {
 }
 
 export interface IGenre {
+  id: string;
   name: string;
-  value: string;
 }
