@@ -22,7 +22,7 @@ const App = () => {
       <AppContext.Provider value={contextValue}>
         <Router>
           <Switch>
-            <Route path="/favorite" component={FavoritePage} />
+            <Route path="/favorites" component={FavoritePage} />
             <Route path="/" component={HomePage} />
           </Switch>
         </Router>

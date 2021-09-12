@@ -23,7 +23,7 @@ export const MovieCardWrapper = styled.div`
     .movie-favorite-marker {
       position: absolute;
       top: 4px;
-      right: 6px;
+      right: 10px;
       width: 20px;
       height: 20px;
     }

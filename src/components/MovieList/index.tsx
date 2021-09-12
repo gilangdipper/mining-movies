@@ -12,8 +12,8 @@ const MovieList: FC<IMovieList> = ({
   isFetching,
   isLoadingMore,
   loadMoreAction,
-  movies,
   movieFavorites,
+  movies,
 }) => {
   return (
     <MovieListWrapper>

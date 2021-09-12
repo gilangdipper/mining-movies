@@ -11,11 +11,11 @@ import {
 import { IMovieCard } from './interface';
 
 const MovieCard: FC<IMovieCard> = ({
-  title,
-  posterPath,
-  voteAverage,
-  onClickFavorite,
   isFavorited,
+  onClickFavorite,
+  posterPath,
+  title,
+  voteAverage,
 }) => {
   const ratingAmountMap = Array.from(Array(Math.round(voteAverage)).keys());
   return (

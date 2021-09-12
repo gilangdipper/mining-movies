@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
 
 import { useAppContext } from '../../context';
-import MovieList from '../../components/MovieList';
-import MovieFilter from '../../components/MovieFilter';
 import { IAppContext } from '../../context/interfaces';
 import { IMovie } from '../../interfaces';
+
+import MovieList from '../../components/MovieList';
+import MovieFilter from '../../components/MovieFilter';
+import Navigator from '../../components/Navigator';
 
 import { HomePageWrapper } from './style';
 import { discoverMovies, filterMovies, loadMoreMovies } from './action';
@@ -45,6 +47,7 @@ const HomePage = () => {
   return (
     <HomePageWrapper>
       <div className="content">
+        <Navigator favoriteNumber={Object.keys(movieFavorites).length} />
         <MovieFilter genres={genres} updateFilter={updateFilters} />
         <MovieList
           addToFavorites={addToFavorites}
