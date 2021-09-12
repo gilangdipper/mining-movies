@@ -18,9 +18,11 @@ const FavoritePage = () => {
     <FavoritePageWrapper>
       <div className="content">
         <MovieList
+          addToFavorites={() => {}}
           isFetching={isFetching}
           isLoadingMore={isLoadingMore}
           loadMoreAction={() => {}}
+          movieFavorites={movieFavorites}
           movies={movieFavoritesFormatted}
         />
       </div>

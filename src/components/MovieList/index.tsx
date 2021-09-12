@@ -8,20 +8,26 @@ import { LoadMoreButton, MovieListWrapper } from './style';
 import MovieLoading from './MovieLoading';
 
 const MovieList: FC<IMovieList> = ({
-  movies,
+  addToFavorites,
   isFetching,
   isLoadingMore,
   loadMoreAction,
+  movies,
+  movieFavorites,
 }) => {
   return (
     <MovieListWrapper>
       {!isFetching &&
-        movies.map(({ title, poster_path, vote_average }) => (
-          <div className="movie-box" key={title}>
+        movies.map((movie) => (
+          <div className="movie-box" key={movie.title}>
             <MovieCard
-              posterPath={poster_path}
-              title={title}
-              voteAverage={vote_average}
+              onClickFavorite={() => {
+                addToFavorites(movie);
+              }}
+              posterPath={movie.poster_path}
+              title={movie.title}
+              voteAverage={movie.vote_average}
+              isFavorited={!!movieFavorites[movie.id]}
             />
           </div>
         ))}

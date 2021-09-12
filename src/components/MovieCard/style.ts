@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Star } from '@styled-icons/fa-solid/Star';
-import { Heart } from '@styled-icons/fa-solid/Heart';
+import { Heart as HeartSolid } from '@styled-icons/fa-solid/Heart';
+import { Heart as HeartRegular } from '@styled-icons/fa-regular/Heart';
 
 export const MovieCardWrapper = styled.div`
   display: flex;
@@ -17,9 +18,18 @@ export const MovieCardWrapper = styled.div`
     display: flex;
     justify-content: center;
     overflow: hidden;
+    position: relative;
+
+    .movie-favorite-marker {
+      position: absolute;
+      top: 4px;
+      right: 6px;
+      width: 20px;
+      height: 20px;
+    }
 
     .poster {
-      height: 140px;
+      height: 200px;
       margin-bottom: 12px;
     }
 
@@ -36,6 +46,7 @@ export const MovieCardWrapper = styled.div`
       padding: 0;
       border: 0;
       background: transparent;
+      cursor: pointer;
     }
 
     &:hover {
@@ -73,6 +84,10 @@ export const StarIcon = styled(Star)`
   color: yellow;
 `;
 
-export const HeartIcon = styled(Heart)`
+export const HeartSolidIcon = styled(HeartSolid)`
   color: red;
+`;
+
+export const HeartRegularIcon = styled(HeartRegular)`
+  color: #ffffff;
 `;

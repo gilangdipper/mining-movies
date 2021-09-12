@@ -3,14 +3,15 @@ import React, { useEffect } from 'react';
 import { useAppContext } from '../../context';
 import MovieList from '../../components/MovieList';
 import MovieFilter from '../../components/MovieFilter';
+import { IAppContext } from '../../context/interfaces';
+import { IMovie } from '../../interfaces';
 
 import { HomePageWrapper } from './style';
 import { discoverMovies, filterMovies, loadMoreMovies } from './action';
-import { IAppContext } from '../../context/interfaces';
 
 const HomePage = () => {
   const appContext = useAppContext();
-  const { filter, genres, isFetching, isLoadingMore, movies } =
+  const { filter, genres, isFetching, isLoadingMore, movies, movieFavorites } =
     appContext.state;
 
   useEffect(() => {
@@ -27,19 +28,30 @@ const HomePage = () => {
     appContext.dispatch({ type: 'UPDATE_APP_STATE', payload });
   };
 
+  const addToFavorites = (movie: IMovie) => {
+    const movieFavoritesUpdated = { ...movieFavorites };
+    if (movieFavorites[movie.id]) {
+      delete movieFavoritesUpdated[movie.id];
+    } else {
+      movieFavoritesUpdated[movie.id] = movie;
+    }
+    updateAppState({ movieFavorites: movieFavoritesUpdated });
+  };
+
+  const updateFilters = (state: Partial<IAppContext['state']['filter']>) => {
+    updateAppState({ filter: { ...filter, ...state } });
+  };
+
   return (
     <HomePageWrapper>
       <div className="content">
-        <MovieFilter
-          genres={genres}
-          updateFilter={(state: Partial<IAppContext['state']['filter']>) => {
-            updateAppState({ filter: { ...filter, ...state } });
-          }}
-        />
+        <MovieFilter genres={genres} updateFilter={updateFilters} />
         <MovieList
+          addToFavorites={addToFavorites}
           isFetching={isFetching}
           isLoadingMore={isLoadingMore}
           loadMoreAction={() => loadMoreMovies(appContext)}
+          movieFavorites={movieFavorites}
           movies={movies}
         />
       </div>
