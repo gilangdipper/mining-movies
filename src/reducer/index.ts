@@ -2,13 +2,15 @@ import { IState, TAction } from './interfaces';
 
 export const initialAppState: IState = {
   error: '',
+  filter: {
+    page: 1,
+    genre: '',
+  },
   genres: [],
-  isLoading: false,
+  isFetching: false,
+  isLoadingMore: false,
   movieFavorites: [],
   movies: [],
-  search: {
-    page: 1,
-  },
 };
 
 export const appReducer = (state: IState, action: TAction): IState => {

@@ -1,13 +1,15 @@
 import { IGenre, IMovie } from '../interfaces';
 export interface IState {
   error: string;
+  filter: {
+    page: number;
+    genre: string;
+  };
   genres: IGenre[];
-  isLoading: boolean;
+  isFetching: boolean;
+  isLoadingMore: boolean;
   movieFavorites: IMovie[];
   movies: IMovie[];
-  search: {
-    page: number;
-  };
 }
 
 type ActionGeneratorType<TName extends string, TPayload> = {
