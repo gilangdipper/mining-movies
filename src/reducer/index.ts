@@ -9,7 +9,7 @@ export const initialAppState: IState = {
   genres: [],
   isFetching: false,
   isLoadingMore: false,
-  movieFavorites: [],
+  movieFavorites: {},
   movies: [],
 };
 

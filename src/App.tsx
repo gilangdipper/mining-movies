@@ -1,13 +1,18 @@
 import React, { Reducer, useMemo, useReducer } from 'react';
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 
 import { AppContext } from './context';
 import { appReducer, initialAppState } from './reducer';
 
 import HomePage from './container/HomePage';
+import FavoritePage from './container/FavoritePage';
 import { IState, TAction } from './reducer/interfaces';
 
-function App() {
-  const [state, dispatch] = useReducer<Reducer<IState, TAction>>(appReducer, initialAppState);
+const App = () => {
+  const [state, dispatch] = useReducer<Reducer<IState, TAction>>(
+    appReducer,
+    initialAppState,
+  );
   const contextValue = useMemo(() => {
     return { state, dispatch };
   }, [state, dispatch]);
@@ -15,10 +20,15 @@ function App() {
   return (
     <div className="App">
       <AppContext.Provider value={contextValue}>
-        <HomePage />
+        <Router>
+          <Switch>
+            <Route path="/favorite" component={FavoritePage} />
+            <Route path="/" component={HomePage} />
+          </Switch>
+        </Router>
       </AppContext.Provider>
     </div>
   );
-}
+};
 
 export default App;

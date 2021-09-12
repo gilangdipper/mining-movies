@@ -8,7 +8,9 @@ export interface IState {
   genres: IGenre[];
   isFetching: boolean;
   isLoadingMore: boolean;
-  movieFavorites: IMovie[];
+  movieFavorites: {
+    [key: string]: IMovie;
+  };
   movies: IMovie[];
 }
 
