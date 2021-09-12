@@ -11,4 +11,8 @@ export const MovieListWrapper = styled.div`
     display: flex;
     justify-content: center;
   }
+
+  .movie-loading {
+    flex: 0 0 100%;
+  }
 `;

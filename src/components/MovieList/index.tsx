@@ -5,7 +5,9 @@ import MovieCard from '../MovieCard';
 import { IMovieList } from './interfaces';
 import { MovieListWrapper } from './style';
 
-const MovieList: FC<IMovieList> = ({ movies }) => {
+import MovieLoading from './MovieLoading';
+
+const MovieList: FC<IMovieList> = ({ movies, isLoading }) => {
   return (
     <MovieListWrapper>
       {movies.map(({ title, backdrop_path, vote_average }) => (
@@ -13,6 +15,11 @@ const MovieList: FC<IMovieList> = ({ movies }) => {
           <MovieCard backdropPath={backdrop_path} title={title} voteAverage={vote_average} />
         </div>
       ))}
+      {isLoading && (
+        <div className="movie-loading">
+          <MovieLoading />
+        </div>
+      )}
     </MovieListWrapper>
   );
 };
