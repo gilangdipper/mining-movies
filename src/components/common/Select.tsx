@@ -64,12 +64,14 @@ interface ISelect {
 }
 
 const Select: FC<ISelect> = ({ options, placeholder, onChange }) => {
-  const wrapperRef = useRef(null);
+  const wrapperRef = useRef<HTMLDivElement>(null);
   const [optionsVisible, setOptionsVisible] = useState<boolean>(false);
   const [selected, setSelected] = useState<string>('');
-  const handleClickOutside = (event) => {
-    if (wrapperRef && !wrapperRef.current.contains(event.target)) {
-      setOptionsVisible(false);
+  const handleClickOutside = (event: MouseEvent) => {
+    if (wrapperRef && wrapperRef.current) {
+      if (event.target instanceof Node && !wrapperRef.current.contains(event.target)) {
+        setOptionsVisible(false);
+      }
     }
     return;
   };
@@ -94,7 +96,7 @@ const Select: FC<ISelect> = ({ options, placeholder, onChange }) => {
         <div className="options">
           {options.map((option, index) => (
             <button
-              key={`${index}${name}`}
+              key={`${index}${option.value}`}
               onClick={() => {
                 onChange(option);
                 setSelected(option.value);

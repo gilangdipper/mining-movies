@@ -1,6 +1,7 @@
-import { IMovie } from '../interfaces';
+import { IGenre, IMovie } from '../interfaces';
 export interface IState {
   error: string;
+  genres: IGenre[];
   isLoading: boolean;
   movieFavorites: IMovie[];
   movies: IMovie[];

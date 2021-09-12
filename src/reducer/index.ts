@@ -2,6 +2,7 @@ import { IState, TAction } from './interfaces';
 
 export const initialAppState: IState = {
   error: '',
+  genres: [],
   isLoading: false,
   movieFavorites: [],
   movies: [],

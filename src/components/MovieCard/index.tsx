@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import { IMAGE_BASE_URL } from '../../constant';
+import { IMAGE_BASE_URL } from '../../constants';
 
 import { HeartIcon, MovieCardWrapper, StarIcon } from './style';
 import { IMovieCard } from './interface';
