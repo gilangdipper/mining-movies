@@ -39,7 +39,7 @@ module.exports = {
     'guard-for-in': 'error',
     'jsx-a11y/click-events-have-key-events': 'off',
     'lines-between-class-members': ['error', 'always'],
-    'max-len': [1, { code: 100 }],
+    'max-len': [1, { code: 80 }],
     'no-await-in-loop': 'off',
     'no-cond-assign': ['error', 'always'],
     'no-console': ['warn', { allow: ['error'] }],

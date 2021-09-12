@@ -1,6 +1,8 @@
 import { IMovie } from '../../interfaces';
 
 export interface IMovieList {
-  movies: IMovie[];
   isFetching: boolean;
+  isLoadingMore: boolean;
+  loadMoreAction: () => void;
+  movies: IMovie[];
 }

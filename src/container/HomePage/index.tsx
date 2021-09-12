@@ -5,12 +5,13 @@ import MovieList from '../../components/MovieList';
 import MovieFilter from '../../components/MovieFilter';
 
 import { HomePageWrapper } from './style';
-import { discoverMovies, filterMovies } from './action';
+import { discoverMovies, filterMovies, loadMoreMovies } from './action';
 import { IAppContext } from '../../context/interfaces';
 
 const HomePage = () => {
   const appContext = useAppContext();
-  const { movies, isFetching, genres, filter } = appContext.state;
+  const { filter, genres, isFetching, isLoadingMore, movies } =
+    appContext.state;
 
   useEffect(() => {
     discoverMovies(appContext);
@@ -35,7 +36,12 @@ const HomePage = () => {
             updateAppState({ filter: { ...filter, ...state } });
           }}
         />
-        <MovieList movies={movies} isFetching={isFetching} />
+        <MovieList
+          isFetching={isFetching}
+          isLoadingMore={isLoadingMore}
+          loadMoreAction={() => loadMoreMovies(appContext)}
+          movies={movies}
+        />
       </div>
     </HomePageWrapper>
   );
