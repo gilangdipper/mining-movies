@@ -10,9 +10,9 @@ import MovieLoading from './MovieLoading';
 const MovieList: FC<IMovieList> = ({ movies, isLoading }) => {
   return (
     <MovieListWrapper>
-      {movies.map(({ title, backdrop_path, vote_average }) => (
+      {movies.map(({ title, poster_path, vote_average }) => (
         <div className="movie-box" key={title}>
-          <MovieCard backdropPath={backdrop_path} title={title} voteAverage={vote_average} />
+          <MovieCard posterPath={poster_path} title={title} voteAverage={vote_average} />
         </div>
       ))}
       {isLoading && (

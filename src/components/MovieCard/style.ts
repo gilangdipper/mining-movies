@@ -19,7 +19,7 @@ export const MovieCardWrapper = styled.div`
     overflow: hidden;
 
     .poster {
-      height: 130px;
+      height: 140px;
       margin-bottom: 12px;
     }
 
@@ -55,6 +55,7 @@ export const MovieCardWrapper = styled.div`
     flex-flow: row wrap;
     flex: 0 0 100%;
     margin-bottom: 4px;
+    justify-content: center;
   }
 
   .title {
@@ -62,7 +63,7 @@ export const MovieCardWrapper = styled.div`
     color: rgba(0, 0, 0, 0.7);
     font-size: 14px;
     font-weight: 500;
-    text-align: left;
+    text-align: center;
   }
 `;
 

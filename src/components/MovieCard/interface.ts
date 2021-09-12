@@ -1,5 +1,5 @@
 export interface IMovieCard {
-  backdropPath: string;
+  posterPath: string;
   title: string;
   voteAverage: number;
 }

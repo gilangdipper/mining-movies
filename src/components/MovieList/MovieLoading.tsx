@@ -9,11 +9,8 @@ const LoadingWrapper = styled.div`
   .movie-card {
     flex: 0 0 20%;
     display: flex;
-    justify-content: center;
-
-    .content-wrapper {
-      width: 140px;
-    }
+    flex-direction: column;
+    align-items: center;
   }
 
   @keyframes background-animate {
@@ -41,7 +38,7 @@ const ShineAnimation = styled.div`
 `;
 
 const PosterMarker = styled(ShineAnimation)`
-  width: 140px;
+  width: 93px;
   height: 130px;
   margin-bottom: 12px;
 `;
@@ -59,11 +56,9 @@ const MovieLoading = () => (
   <LoadingWrapper>
     {Array.from(Array(5)).map((numb) => (
       <div className="movie-card" key={numb}>
-        <div className="content-wrapper">
-          <PosterMarker />
-          <RatingMarker />
-          <TitleMarker />
-        </div>
+        <PosterMarker />
+        <RatingMarker />
+        <TitleMarker />
       </div>
     ))}
   </LoadingWrapper>
