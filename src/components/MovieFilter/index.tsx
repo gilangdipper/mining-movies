@@ -7,7 +7,10 @@ import { IMovieFilter } from './interfaces';
 
 const MovieFilter: FC<IMovieFilter> = ({ genres, updateFilter }) => {
   const genreFormatted = useMemo(() => {
-    return genres.map(({ id, name }) => ({ value: `${id}`, name }));
+    return [
+      { value: 'latest', name: 'Latest' },
+      ...genres.map(({ id, name }) => ({ value: `${id}`, name })),
+    ];
   }, [genres]);
   return (
     <MovieFilterWrapper>
