@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const HomePageWrapper = styled.div`
   display: flex;
   min-height: 100vh;
-  background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+  background-image: linear-gradient(to top, #5ee7df 0%, #b490ca 100%);
 
   .content {
     width: 100%;

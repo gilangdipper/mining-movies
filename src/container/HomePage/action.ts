@@ -19,7 +19,10 @@ export const discoverMovies = ({ state, dispatch }: IAppContext) => {
     .then((response) => {
       dispatch({
         type: 'UPDATE_APP_STATE',
-        payload: { movies: response.data, isLoading: false },
+        payload: {
+          movies: response.data.results,
+          isLoading: false,
+        },
       });
     })
     .catch((error) => {

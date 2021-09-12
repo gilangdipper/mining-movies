@@ -8,6 +8,7 @@ import { discoverMovies } from './action';
 
 const HomePage = () => {
   const appContext = useAppContext();
+  const { movies } = appContext.state;
 
   useEffect(() => {
     discoverMovies(appContext);
@@ -16,7 +17,7 @@ const HomePage = () => {
   return (
     <HomePageWrapper>
       <div className="content">
-        <MovieList />
+        <MovieList movies={movies} />
       </div>
     </HomePageWrapper>
   );

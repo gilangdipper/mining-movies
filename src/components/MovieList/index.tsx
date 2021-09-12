@@ -1,17 +1,16 @@
-import React from 'react';
+import React, { FC } from 'react';
 
-import MovieBox from '../MovieBox';
+import MovieCard from '../MovieCard';
 
+import { IMovieList } from './interfaces';
 import { MovieListWrapper } from './style';
 
-const MovieList = () => {
-  const movieList = [{ title: 'film1' }, { title: 'film2' }];
-
+const MovieList: FC<IMovieList> = ({ movies }) => {
   return (
     <MovieListWrapper>
-      {movieList.map(({ title }) => (
+      {movies.map(({ title, backdrop_path, vote_average }) => (
         <div className="movie-box" key={title}>
-          <MovieBox title={title} />
+          <MovieCard backdropPath={backdrop_path} title={title} voteAverage={vote_average} />
         </div>
       ))}
     </MovieListWrapper>

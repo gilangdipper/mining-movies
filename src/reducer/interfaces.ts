@@ -1,8 +1,9 @@
+import { IMovie } from '../interfaces';
 export interface IState {
   error: string;
   isLoading: boolean;
-  movieFavorites: object[];
-  movies: object[];
+  movieFavorites: IMovie[];
+  movies: IMovie[];
   search: {
     page: number;
   };
