@@ -7,10 +7,11 @@ export const MovieCardWrapper = styled.div`
   display: flex;
   flex-flow: row wrap;
   overflow: hidden;
-  width: 140px;
+  width: 100%;
   justify-content: center;
   margin-bottom: 10px;
   align-content: flex-start;
+  padding: 0 8px;
 
   .poster-wrapper {
     flex: 0 0 100%;
@@ -23,13 +24,13 @@ export const MovieCardWrapper = styled.div`
     .movie-favorite-marker {
       position: absolute;
       top: 4px;
-      right: 10px;
+      right: 6px;
       width: 20px;
       height: 20px;
     }
 
     .poster {
-      height: 200px;
+      width: 100%;
       margin-bottom: 12px;
     }
 

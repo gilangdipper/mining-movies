@@ -48,7 +48,11 @@ const HomePage = () => {
     <HomePageWrapper>
       <div className="content">
         <Navigator favoriteNumber={Object.keys(movieFavorites).length} />
-        <MovieFilter genres={genres} updateFilter={updateFilters} />
+        <MovieFilter
+          genres={genres}
+          updateFilter={updateFilters}
+          filterGenre={filter.genre}
+        />
         <MovieList
           addToFavorites={addToFavorites}
           isFetching={isFetching}

@@ -9,6 +9,7 @@ import MovieLoading from './MovieLoading';
 
 const MovieList: FC<IMovieList> = ({
   addToFavorites,
+  isFavoritePage = false,
   isFetching,
   isLoadingMore,
   loadMoreAction,
@@ -36,9 +37,15 @@ const MovieList: FC<IMovieList> = ({
           <MovieLoading />
         </div>
       )}
-      {!isFetching && !isLoadingMore && (
+      {!isFetching && !isLoadingMore && !isFavoritePage && (
         <div className="movie-load-more">
-          <LoadMoreButton onClick={loadMoreAction}>Load More</LoadMoreButton>
+          <LoadMoreButton
+            onClick={() => {
+              loadMoreAction?.();
+            }}
+          >
+            Load More
+          </LoadMoreButton>
         </div>
       )}
     </MovieListWrapper>

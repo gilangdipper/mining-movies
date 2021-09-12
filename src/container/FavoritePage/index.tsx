@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 
 import { useAppContext } from '../../context';
+import { IMovie } from '../../interfaces';
 
 import MovieList from '../../components/MovieList';
 import Navigator from '../../components/Navigator';
@@ -15,15 +16,28 @@ const FavoritePage = () => {
     [movieFavorites],
   );
 
+  const addToFavorites = (movie: IMovie) => {
+    const movieFavoritesUpdated = { ...movieFavorites };
+    if (movieFavorites[movie.id]) {
+      delete movieFavoritesUpdated[movie.id];
+    } else {
+      movieFavoritesUpdated[movie.id] = movie;
+    }
+    appContext.dispatch({
+      type: 'UPDATE_APP_STATE',
+      payload: { movieFavorites: movieFavoritesUpdated },
+    });
+  };
+
   return (
     <FavoritePageWrapper>
       <div className="content">
         <Navigator favoriteNumber={Object.keys(movieFavorites).length} />
         <MovieList
-          addToFavorites={() => {}}
+          addToFavorites={addToFavorites}
+          isFavoritePage
           isFetching={isFetching}
           isLoadingMore={isLoadingMore}
-          loadMoreAction={() => {}}
           movieFavorites={movieFavorites}
           movies={movieFavoritesFormatted}
         />

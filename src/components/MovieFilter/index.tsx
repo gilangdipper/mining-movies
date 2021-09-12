@@ -5,7 +5,11 @@ import Select from '../common/Select';
 import { MovieFilterWrapper } from './style';
 import { IMovieFilter } from './interfaces';
 
-const MovieFilter: FC<IMovieFilter> = ({ genres, updateFilter }) => {
+const MovieFilter: FC<IMovieFilter> = ({
+  genres,
+  updateFilter,
+  filterGenre,
+}) => {
   const genreFormatted = useMemo(() => {
     return [
       { value: 'latest', name: 'Latest' },
@@ -16,8 +20,9 @@ const MovieFilter: FC<IMovieFilter> = ({ genres, updateFilter }) => {
     <MovieFilterWrapper>
       <div className="filter-select">
         <Select
+          value={filterGenre}
           options={genreFormatted}
-          placeholder="Select genre"
+          placeholder="Select filter..."
           onChange={({ value }) => {
             updateFilter({ genre: value });
           }}

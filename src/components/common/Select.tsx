@@ -1,5 +1,6 @@
-import React, { FC, useEffect, useRef, useState } from 'react';
+import React, { FC, useEffect, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
+import { Check as CheckIcon } from '@styled-icons/fa-solid/Check';
 
 const SelectWrapper = styled.div`
   display: block;
@@ -57,9 +58,28 @@ const SelectWrapper = styled.div`
         font-size: 12px;
         padding: 6px 18px;
         color: rgba(0, 0, 0, 0.75);
+        align-items: center;
+
+        &.active {
+          background-image: linear-gradient(
+            60deg,
+            #3d3393 0%,
+            #2b76b9 37%,
+            #2cacd1 65%,
+            #35eb93 100%
+          );
+          color: rgba(255, 255, 255, 0.75);
+          font-weight: bold;
+          padding-left: 0;
+        }
 
         &:hover {
           background: #78d3db;
+        }
+
+        svg {
+          width: 10px;
+          margin: 0 4px;
         }
       }
     }
@@ -72,18 +92,26 @@ type TOptions = {
 };
 
 interface ISelect {
+  onChange: (optionValue: TOptions) => void;
   options: TOptions[];
   placeholder: string;
-  onChange: (optionValue: TOptions) => void;
+  value: string;
 }
 
-const Select: FC<ISelect> = ({ options, placeholder, onChange }) => {
+const Select: FC<ISelect> = ({ options, placeholder, onChange, value }) => {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const [optionsVisible, setOptionsVisible] = useState<boolean>(false);
-  const [selected, setSelected] = useState<string>('');
+  const optionActive = useMemo(
+    () => options.filter((option) => option.value === value)[0],
+    [value],
+  );
+
   const handleClickOutside = (event: MouseEvent) => {
     if (wrapperRef && wrapperRef.current) {
-      if (event.target instanceof Node && !wrapperRef.current.contains(event.target)) {
+      if (
+        event.target instanceof Node &&
+        !wrapperRef.current.contains(event.target)
+      ) {
         setOptionsVisible(false);
       }
     }
@@ -101,21 +129,22 @@ const Select: FC<ISelect> = ({ options, placeholder, onChange }) => {
   return (
     <SelectWrapper className="select-component" ref={wrapperRef}>
       <button className="placeholder" onClick={() => setOptionsVisible(true)}>
-        {selected || placeholder}
+        {optionActive?.name || placeholder}
       </button>
       <div className="options-wrapper">
         <div className={`options ${optionsVisible && 'show'}`}>
           {options.map((option) => (
             <button
-              className="option-item"
+              className={`option-item ${
+                option.value === optionActive?.value && 'active'
+              }`}
               key={`${option.value}`}
               onClick={() => {
                 setOptionsVisible(false);
-
                 onChange(option);
-                setSelected(option.name);
               }}
             >
+              {option.value === optionActive?.value && <CheckIcon />}
               {option.name}
             </button>
           ))}
