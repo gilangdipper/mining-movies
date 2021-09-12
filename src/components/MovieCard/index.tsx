@@ -6,7 +6,7 @@ import { HeartIcon, MovieCardWrapper, StarIcon } from './style';
 import { IMovieCard } from './interface';
 
 const MovieCard: FC<IMovieCard> = ({ title, posterPath, voteAverage }) => {
-  const ratingAmountMap = Array.from(Array(Math.round(voteAverage)));
+  const ratingAmountMap = Array.from(Array(Math.round(voteAverage)).keys());
   return (
     <MovieCardWrapper>
       <div className="poster-wrapper">

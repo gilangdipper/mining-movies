@@ -54,7 +54,7 @@ const TitleMarker = styled(ShineAnimation)`
 
 const MovieLoading = () => (
   <LoadingWrapper>
-    {Array.from(Array(5)).map((numb) => (
+    {Array.from(Array(5).keys()).map((numb) => (
       <div className="movie-card" key={numb}>
         <PosterMarker />
         <RatingMarker />

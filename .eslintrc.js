@@ -21,6 +21,8 @@ module.exports = {
   },
   plugins: ['react', 'jsx-a11y', '@typescript-eslint'],
   rules: {
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': 'error',
     'react-hooks/exhaustive-deps': 'off',
     'no-var': 'error',
     'brace-style': 'error',
