@@ -33,6 +33,7 @@ const FavoritePage = () => {
     <FavoritePageWrapper>
       <div className="content">
         <Navigator favoriteNumber={Object.keys(movieFavorites).length} />
+        <h3>Favorites</h3>
         <MovieList
           addToFavorites={addToFavorites}
           isFavoritePage

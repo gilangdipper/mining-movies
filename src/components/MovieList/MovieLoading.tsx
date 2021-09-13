@@ -38,8 +38,8 @@ const ShineAnimation = styled.div`
 `;
 
 const PosterMarker = styled(ShineAnimation)`
-  width: 93px;
-  height: 130px;
+  width: 137px;
+  height: 206px;
   margin-bottom: 12px;
 `;
 const RatingMarker = styled(ShineAnimation)`
@@ -48,7 +48,7 @@ const RatingMarker = styled(ShineAnimation)`
   margin-bottom: 4px;
 `;
 const TitleMarker = styled(ShineAnimation)`
-  width: 140px;
+  width: 137px;
   height: 10px;
 `;
 

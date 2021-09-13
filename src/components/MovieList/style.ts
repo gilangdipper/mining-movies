@@ -6,6 +6,13 @@ export const MovieListWrapper = styled.div`
   flex-flow: row wrap;
   justify-content: flex-start;
 
+  .no-movie {
+    flex: 0 0 100%;
+    display: flex;
+    justify-content: center;
+    font-style: italic;
+  }
+
   .movie-box {
     flex: 0 0 20%;
     display: flex;
