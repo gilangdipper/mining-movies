@@ -2,6 +2,7 @@
   "name": "mining-movies",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://gilangdipper.github.io/mining-movies",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -11,6 +12,7 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "axios": "^0.21.4",
+    "gh-pages": "^3.2.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^5.3.0",
@@ -26,7 +28,9 @@
     "test:watch": "npm run test -- --watchAll=false",
     "eject": "react-scripts eject",
     "prepare": "husky install",
-    "lintStaged": "lint-staged"
+    "lintStaged": "lint-staged",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
