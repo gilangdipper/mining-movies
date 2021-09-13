@@ -4,7 +4,7 @@ import { shallow, ShallowWrapper } from 'enzyme';
 import { IMovie } from '../../interfaces';
 import { IMAGE_BASE_URL } from '../../constants';
 
-import { IMovieCard } from './interface';
+import { IMovieCard } from './interfaces';
 import { HeartRegularIcon, HeartSolidIcon, StarIcon } from './style';
 import MovieCard from '.';
 

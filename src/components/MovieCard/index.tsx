@@ -8,7 +8,7 @@ import {
   MovieCardWrapper,
   StarIcon,
 } from './style';
-import { IMovieCard } from './interface';
+import { IMovieCard } from './interfaces';
 
 const MovieCard: FC<IMovieCard> = ({
   isFavorited,
