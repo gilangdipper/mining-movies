@@ -4,12 +4,18 @@ import { API_KEY, BASE_URL, DISCOVER_PATH, MOVIE_GENRE_PATH } from '../../consta
 import { IAppContext } from '../../context/interfaces';
 import { IGenreResponses, IMovieResponses } from '../../interfaces/responses';
 
-const defaultDataParams = { api_key: API_KEY };
+const defaultDataParams = {
+  api_key: API_KEY,
+  language: 'en-US',
+};
 
 export const discoverMovies = ({ state: { filter }, dispatch }: IAppContext) => {
   const urlMoviesParams = new URLSearchParams({
     ...defaultDataParams,
     page: `${filter.page}`,
+    sort_by: 'popularity.desc',
+    include_adult: 'false',
+    include_video: 'false',
   });
   const urlMovies = `${BASE_URL}${DISCOVER_PATH}?${urlMoviesParams.toString()}`;
   const urlGenreParams = new URLSearchParams(defaultDataParams);
@@ -50,9 +56,23 @@ export const discoverMovies = ({ state: { filter }, dispatch }: IAppContext) => 
 };
 
 export const filterMovies = ({ state: { filter }, dispatch }: IAppContext) => {
-  let params: Partial<Record<'api_key' | 'page' | 'with_genres' | 'year', string>> = {
+  let params: Partial<
+    Record<
+      | 'api_key'
+      | 'page'
+      | 'with_genres'
+      | 'year'
+      | 'sort_by'
+      | 'include_adult'
+      | 'include_video',
+      string
+    >
+  > = {
     ...defaultDataParams,
     page: '1',
+    sort_by: 'popularity.desc',
+    include_adult: 'false',
+    include_video: 'false',
   };
 
   if (filter.genre === 'latest') {
