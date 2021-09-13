@@ -1,10 +1,10 @@
 module.exports = {
-  printWidth: 100,
+  printWidth: 90,
   tabWidth: 2,
   singleQuote: true,
   semi: true,
   trailingComma: 'all',
-  arrowParens: "always",
+  arrowParens: 'always',
   overrides: [
     {
       files: '*.{js,jsx,tsx,ts,scss,json,html}',
