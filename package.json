@@ -23,6 +23,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:nowatch": "npm run test -- --watchAll=false",
     "eject": "react-scripts eject",
     "prepare": "husky install",
     "lintStaged": "lint-staged"
@@ -48,10 +49,13 @@
   "devDependencies": {
     "@styled-icons/fa-regular": "^10.34.0",
     "@styled-icons/fa-solid": "^10.34.0",
+    "@types/enzyme": "^3.10.9",
     "@types/react-router-dom": "^5.1.8",
     "@types/styled-components": "^5.1.14",
     "@typescript-eslint/eslint-plugin": "^4.31.0",
     "@typescript-eslint/parser": "^4.31.0",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.3",
+    "enzyme": "^3.11.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "husky": "^7.0.2",
