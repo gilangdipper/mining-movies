@@ -29,6 +29,12 @@ export const MovieListWrapper = styled.div`
     justify-content: center;
     margin-top: 30px;
   }
+
+  @media screen and (max-width: 425px) {
+    .movie-box {
+      flex: 0 0 50%;
+    }
+  }
 `;
 
 export const LoadMoreButton = styled.button`

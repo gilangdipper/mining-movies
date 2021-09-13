@@ -9,6 +9,6 @@ export const FavoritePageWrapper = styled.div`
     width: 100%;
     max-width: 768px;
     margin: 0 auto;
-    padding-top: 40px;
+    padding: 40px 10px 0;
   }
 `;

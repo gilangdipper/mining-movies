@@ -8,4 +8,10 @@ export const MovieFilterWrapper = styled.div`
   .filter-select {
     flex: 0 0 25%;
   }
+
+  @media screen and (max-width: 425px) {
+    .filter-select {
+      flex: 0 0 50%;
+    }
+  }
 `;
