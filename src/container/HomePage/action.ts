@@ -19,6 +19,8 @@ export const discoverMovies = ({ state: { filter }, dispatch }: IAppContext) => 
 
   const getMovies = () => axios.get(urlMovies);
   const getGenres = () => axios.get(urlGenres);
+  /*eslint-disable */
+  console.log('///', urlMovies, urlGenres);
 
   Promise.all([getMovies(), getGenres()])
     .then(
