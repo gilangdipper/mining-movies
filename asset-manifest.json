@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/mining-movies/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/mining-movies/static/js/main.b8dadffa.chunk.js",
-    "main.js.map": "/mining-movies/static/js/main.b8dadffa.chunk.js.map",
+    "main.js": "/mining-movies/static/js/main.de8d8431.chunk.js",
+    "main.js.map": "/mining-movies/static/js/main.de8d8431.chunk.js.map",
     "runtime-main.js": "/mining-movies/static/js/runtime-main.b39c105d.js",
     "runtime-main.js.map": "/mining-movies/static/js/runtime-main.b39c105d.js.map",
     "static/js/2.48143d13.chunk.js": "/mining-movies/static/js/2.48143d13.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.b39c105d.js",
     "static/js/2.48143d13.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.b8dadffa.chunk.js"
+    "static/js/main.de8d8431.chunk.js"
   ]
 }
