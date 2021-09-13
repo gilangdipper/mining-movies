@@ -9,9 +9,7 @@ import {
 import { IAppContext } from '../../context/interfaces';
 import { IGenreResponses, IMovieResponses } from '../../interfaces/responses';
 
-const defaultDataParams = {
-  api_key: API_KEY,
-};
+const defaultDataParams = { api_key: API_KEY };
 
 export const discoverMovies = ({
   state: { filter },
