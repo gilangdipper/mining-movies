@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/mining-movies/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/mining-movies/static/js/main.b8dadffa.chunk.js",
+    "main.js.map": "/mining-movies/static/js/main.b8dadffa.chunk.js.map",
+    "runtime-main.js": "/mining-movies/static/js/runtime-main.b39c105d.js",
+    "runtime-main.js.map": "/mining-movies/static/js/runtime-main.b39c105d.js.map",
+    "static/js/2.48143d13.chunk.js": "/mining-movies/static/js/2.48143d13.chunk.js",
+    "static/js/2.48143d13.chunk.js.map": "/mining-movies/static/js/2.48143d13.chunk.js.map",
+    "static/js/3.2e6ca698.chunk.js": "/mining-movies/static/js/3.2e6ca698.chunk.js",
+    "static/js/3.2e6ca698.chunk.js.map": "/mining-movies/static/js/3.2e6ca698.chunk.js.map",
+    "index.html": "/mining-movies/index.html",
+    "static/css/main.6dea0f05.chunk.css.map": "/mining-movies/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.48143d13.chunk.js.LICENSE.txt": "/mining-movies/static/js/2.48143d13.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b39c105d.js",
+    "static/js/2.48143d13.chunk.js",
+    "static/css/main.6dea0f05.chunk.css",
+    "static/js/main.b8dadffa.chunk.js"
+  ]
+}
