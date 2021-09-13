@@ -1,20 +1,12 @@
 import axios, { AxiosResponse } from 'axios';
 
-import {
-  API_KEY,
-  BASE_URL,
-  DISCOVER_PATH,
-  MOVIE_GENRE_PATH,
-} from '../../constants';
+import { API_KEY, BASE_URL, DISCOVER_PATH, MOVIE_GENRE_PATH } from '../../constants';
 import { IAppContext } from '../../context/interfaces';
 import { IGenreResponses, IMovieResponses } from '../../interfaces/responses';
 
 const defaultDataParams = { api_key: API_KEY };
 
-export const discoverMovies = ({
-  state: { filter },
-  dispatch,
-}: IAppContext) => {
+export const discoverMovies = ({ state: { filter }, dispatch }: IAppContext) => {
   const urlMoviesParams = new URLSearchParams({
     ...defaultDataParams,
     page: `${filter.page}`,
@@ -56,9 +48,7 @@ export const discoverMovies = ({
 };
 
 export const filterMovies = ({ state: { filter }, dispatch }: IAppContext) => {
-  let params: Partial<
-    Record<'api_key' | 'page' | 'with_genres' | 'year', string>
-  > = {
+  let params: Partial<Record<'api_key' | 'page' | 'with_genres' | 'year', string>> = {
     ...defaultDataParams,
     page: '1',
   };
@@ -96,13 +86,8 @@ export const filterMovies = ({ state: { filter }, dispatch }: IAppContext) => {
     });
 };
 
-export const loadMoreMovies = ({
-  state: { filter, movies },
-  dispatch,
-}: IAppContext) => {
-  let params: Partial<
-    Record<'api_key' | 'page' | 'with_genres' | 'year', string>
-  > = {
+export const loadMoreMovies = ({ state: { filter, movies }, dispatch }: IAppContext) => {
+  let params: Partial<Record<'api_key' | 'page' | 'with_genres' | 'year', string>> = {
     ...defaultDataParams,
     page: `${filter.page + 1}`,
   };
